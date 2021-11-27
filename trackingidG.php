@@ -64,12 +64,17 @@
 							<input type="text" id="Tnum">
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<<input type="button" name="Genrate" onclick="getRandom(9)">
+						</div>
+						<div class="col-md-5">
+							<input type="text" id="Tnum">
+						</div>
+					</div>
 				</form>
 			</div>
 		</div>
-
-		<!-- TRACKING ID GENRATOR -->
-		<div></div>
 	</div>
 	<script>
 		function getRandom(length) {
