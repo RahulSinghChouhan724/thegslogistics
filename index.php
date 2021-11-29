@@ -186,7 +186,7 @@
                     <h1 class="mb-4">Tracking Number</h1>
                     <div>
                         <form action="fetcher.php" method="post">
-                            <input type="number" name="Traking Number" id="Tid">
+                            <input type="number" name="tnum" id="Tid">
                             <br><br>
                             <button class="btn" id="next">Next</button>
                                 <br><br>
