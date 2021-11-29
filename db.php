@@ -1,5 +1,5 @@
 <?php
-	$servername='localhost';
+  $servername='localhost';
 	$username='root';
 	$password='';
 	$dbname = "thegslogistics";
@@ -7,4 +7,3 @@
 	  if(!$conn){
 		  die('Could not Connect MySql Server:' .mysql_error());
 		}
-?>

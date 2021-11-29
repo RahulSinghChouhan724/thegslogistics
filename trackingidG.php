@@ -26,26 +26,39 @@
 			width: 500px;
 			margin: 0 auto;
 		}
-		.row{
-			margin-top:20px;
+
+		.row {
+			margin-top: 20px;
 		}
 	</style>
 </head>
 
 <body>
 	<div class="container-fluid">
+		<div class="container">
+				<div class="row">
+					<div class="col-md-10"></div>
+					<div class="col-md-2">
+						<form action="logout.php" method="get">
+	<a href="logout.php">Logout</a>
+	</form>
+					</div>
+				</div>
+		</div>
+	</div>
+	<div class="container-fluid">
 		<div class="wrapper">
 			<div class="container">
 				<div class="row">
 					<h2>Enter Information</h2>
 				</div>
-				<form action="insert.php" method="">
+				<form action="insert.php" method="post">
 					<div class="row">
 						<div class="col-md-3">
 							<label for="Name">Senders Name:</label>
 						</div>
 						<div class="col-md-5">
-							<input type="text" id="Fname">
+							<input type="text"  name ="sname" class="form-control">
 						</div>
 					</div>
 					<div class="row">
@@ -53,35 +66,39 @@
 							<label for="Date">Date:</label>
 						</div>
 						<div class="col-md-5">
-							<input type="date" id="Fname">
+							<input type="date"  name="sdate" class="form-control">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-3">
-							<label for="Date">Tracking No:</label>
+							<label for="TrackingNum">Tracking No:</label>
 						</div>
 						<div class="col-md-5">
-							<input type="text" id="Tnum">
+							<input type="text" id="Tnum" name="Tnum" class="form-control">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-3">
-							<<input type="button" name="Genrate" onclick="getRandom(9)">
+							<input type="button" value="Genrate" onclick="getRandom(9)">
 						</div>
 						<div class="col-md-5">
-							<input type="text" id="Tnum">
+							<input type="submit" class="btn btn-primary" name="submit" value="Submit">
 						</div>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
+
+	<!--Script-->
 	<script>
 		function getRandom(length) {
 			var randN = Math.floor(Math.pow(10, length - 1) + Math.random() * 9 * Math.pow(10, length - 1));
-			return randN;
-		}
+			document.getElementById('Tnum').value = randN;
+			}
 	</script>
+
+
 </body>
 
 </html>

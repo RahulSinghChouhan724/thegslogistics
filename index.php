@@ -30,14 +30,14 @@
 <body>
     <!-- Topbar Start -->
     <div class="container-fluid bg-dark">
-        <div class="row py-2 px-lg-5">  
+        <div class="row py-2 px-lg-5">
             <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center text-white">
                     <small><i class="fa fa-phone-alt mr-2"></i>+91 8233151745</small>
                     <small class="px-3">|</small>
                     <small><i class="fa fa-envelope mr-2"></i>Gslogisticsofficial@gmail.com</small>
                     <small class="px-3">|</small>
-                    <small><i class="fa fa-envelope mr-2"><a herf></i></small>
+                    <i class="fa fa-id-card" aria-hidden="true"></i><small class="px-1"></small><a href="Adminlogin.php">login</a>
                 </div>
             </div>
             <!--<div class="col-lg-6 text-right text-lg-right">
@@ -60,7 +60,7 @@
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
             <a href="index.html" class="navbar-brand ml-lg-3">
                 <i class="fa fa-logo" style="color:red;font-size:42px!important;">
-                    <img src="./img/logo.jpg" alt="G3 Logistic" width="160" height="80"> 
+                    <img src="./img/logo.jpg" alt="G3 Logistic" width="160" height="80">
                 </i>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -99,7 +99,7 @@
                 <div class="col-lg-7">
                     <h6 class="text-primary text-uppercase font-weight-bold">About Us</h6>
                     <h1 class="mb-4">Trusted & Faster Logistic Service Provider</h1>
-                    <p class="mb-4">We are problem solvers; we take the burden off your shoulders. We take the hassle and complicated business of transportation and logistics and turn it into a simple and stress free experience. We are dedicated to providing the best
+                    <p class="mb-4" style="text-align:justify">We are problem solvers; we take the burden off your shoulders. We take the hassle and complicated business of transportation and logistics and turn it into a simple and stress free experience. We are dedicated to providing the best
                         customer service and the most cost effective solutions for your transportation and logistics requirements.</p>
                 </div>
             </div>
@@ -173,7 +173,8 @@
             </div>
         </div>
     </div>
-    <!-- Quote Request Stop -->
+
+
 
     <!-- Track Request Start -->
     <div class="container-fluid bg-secondary my-5">
@@ -184,11 +185,11 @@
                     <h6 class="text-primary text-uppercase font-weight-bold">Track & Trace</h6>
                     <h1 class="mb-4">Tracking Number</h1>
                     <div>
-                        <form>
+                        <form action="fetcher.php" method="post">
                             <input type="number" name="Traking Number" id="Tid">
                             <br><br>
                             <button class="btn" id="next">Next</button>
-                            <button class="btn" id="prev" style="display: none;">Next</button>
+                                <br><br>
                         </form>
                     </div>
                 </div>
@@ -229,7 +230,9 @@
         </div>
 
     </div>
-    <!-- Track Request Start -->
+
+
+    <!-- Track Request Stop -->
 
 
     <!-- Services Start -->
@@ -288,8 +291,8 @@
                 <div class="col-lg-7 py-5 py-lg-0 ">
                     <h6 class="text-primary text-uppercase font-weight-bold ">Why Choose Us</h6>
                     <h1 class="mb-4 ">Faster, Safe and Trusted Logistics Services</h1>
-                    <p class="mb-4 ">The world of transportation and logistics never stops. We understand the need for immediate responses and that is why we are dedicated to provide you with round the clock support.</p>
-                    <p>By being streamline and embracing new technology, we are able to keep costs to a minimum, so we pass on the savings to our customers.</p>
+                    <p class="mb-4 "style="text-align:justify">The world of transportation and logistics never stops. We understand the need for immediate responses and that is why we are dedicated to provide you with round the clock support.</p>
+                    <p style="text-align:justify;">By being streamline and embracing new technology, we are able to keep costs to a minimum, so we pass on the savings to our customers.</p>
                     <ul class="list-inline ">
                         <li>
                             <h6><i class="far fa-dot-circle text-primary mr-3 "></i>Best In Industry</h6>
@@ -461,7 +464,7 @@
      Team End -->
 
 
-    <!-- Testimonial Start 
+    <!-- Testimonial Start
     <div class="container-fluid py-5 ">
         <div class="container ">
             <div class="text-center pb-2 ">
