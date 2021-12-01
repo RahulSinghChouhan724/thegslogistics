@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pick Up Align</title>
+  </head>
+  <body>
+    <div class="container" id="hide">
+        <div class="row">
+            <div class="col-md-4">
+                <label style="font-weight: bold;"> Pick up date : </label>
+                <label id="PD" style="font-weight: bold;"></label>
+            </div>
+            <div class="col-md-4">
+                <label id="sId"></label>
+            </div>
+            <div class="col-md-4">
+                <label style="font-weight: bold;"> Expected dilevery date :</label>
+                <label id="ED" style="font-weight: bold;"></label>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="container" id="body">
+                    <div class="progress-container">
+                        <div class="progress" id="progress"></div>
+                        <div class="circle active">Warehouse</div>
+                        <div class="circle"> In Transit</div>
+                        <div class="circle"> In Custom</div>
+                        <div class="circle">OFD</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <br>
+        </div>
+    </div>
+    <<script type="text/javascript">
+      const progress = document.getElementById('progress')
+      const prev = document.getElementById('prev')
+      const next = document.getElementById('next')
+      const circles = document.querySelectorAll('.circle')
+
+      let currentActive = -1
+
+
+      function myFunction() {
+                      if (currentActive > circles.length) {
+                          currentActive = circles.length
+                      }
+                      update()
+      }
+
+
+      function update() {
+          circles.forEach((circle, idx) => {
+              if (idx < currentActive) {
+                  circle.classList.add('active')
+              } else {
+                  circle.classList.remove('active')
+              }
+          })
+
+          const actives = document.querySelectorAll('.active')
+
+          progress.style.width = (actives.length - 1) / (circles.length - 1) * 100 + '%'
+
+          if (currentActive === 1) {
+              prev.disabled = true
+          } else if (currentActive === circles.length) {
+              next.disabled = true
+          } else {
+              prev.disabled = true
+              next.disabled = true
+          }
+          return 0;
+      }
+
+
+    </script>
+  </body>
+</html>

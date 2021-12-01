@@ -174,8 +174,6 @@
         </div>
     </div>
 
-
-
     <!-- Track Request Start -->
     <div class="container-fluid bg-secondary my-5">
         <div class="container">
@@ -195,40 +193,6 @@
                 </div>
             </div>
         </div>
-        <div class="container" id="hide" style="display:none;">
-            <div class="row">
-                <div class="col-md-4">
-                    <label style="font-weight: bold;"> Pick up date : </label>
-                    <label id="PD" style="font-weight: bold;"></label>
-                </div>
-                <div class="col-md-4">
-                    <label id="sId"></label>
-                </div>
-                <div class="col-md-4">
-                    <label style="font-weight: bold;"> Expected dilevery date :</label>
-                    <label id="ED" style="font-weight: bold;"></label>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <div class="container" id="body">
-                        <div class="progress-container">
-                            <div class="progress" id="progress"></div>
-                            <div class="circle active">Pickup Align</div>
-                            <div class="circle">On Transit</div>
-                            <div class="circle"> In Custom</div>
-                            <div class="circle">OFD</div>
-                        </div>
-                    </div>
-
-                    <script src="scriptPB.js"></script>
-                </div>
-            </div>
-            <div class="row">
-                <br>
-            </div>
-        </div>
-
     </div>
 
 
