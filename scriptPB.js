@@ -1,61 +1,68 @@
-const progress = document.getElementById('progress')
-const prev = document.getElementById('prev')
-const next = document.getElementById('next')
-const circles = document.querySelectorAll('.circle')
+$(document).ready(function() {
+    var currentGfgStep, nextGfgStep, previousGfgStep;
+    var opacity;
+    var current = 1;
+    var steps = $("fieldset").length;
 
-let currentActive = 1
+    setProgressBar(current);
 
+    $(".next-step").click(function() {
 
-function myFunction() {
-                calDate(datearr[i])
-                if (currentActive > circles.length) {
-                    currentActive = circles.length
-                }
-                update()
-}
-prev.addEventListener('click', () => {
-    currentActive--
+        currentGfgStep = $(this).parent();
+        nextGfgStep = $(this).parent().next();
 
-    if (currentActive < 1) {
-        currentActive = 1
+        $("#progressbar li").eq($("fieldset")
+            .index(nextGfgStep)).addClass("active");
+
+        nextGfgStep.show();
+        currentGfgStep.animate({ opacity: 0 }, {
+            step: function(now) {
+                opacity = 1 - now;
+
+                currentGfgStep.css({
+                    'display': 'none',
+                    'position': 'relative'
+                });
+                nextGfgStep.css({ 'opacity': opacity });
+            },
+            duration: 500
+        });
+        setProgressBar(++current);
+    });
+
+    $(".previous-step").click(function() {
+
+        currentGfgStep = $(this).parent();
+        previousGfgStep = $(this).parent().prev();
+
+        $("#progressbar li").eq($("fieldset")
+            .index(currentGfgStep)).removeClass("active");
+
+        previousGfgStep.show();
+
+        currentGfgStep.animate({ opacity: 0 }, {
+            step: function(now) {
+                opacity = 1 - now;
+
+                currentGfgStep.css({
+                    'display': 'none',
+                    'position': 'relative'
+                });
+                previousGfgStep.css({ 'opacity': opacity });
+            },
+            duration: 500
+        });
+        setProgressBar(--current);
+    });
+
+    function setProgressBar(currentStep) {
+        var percent = parseFloat(100 / steps) * current;
+        percent = percent.toFixed();
+        $(".progress-bar")
+            .css("width", percent + "%")
     }
 
-    update()
-})
-
-function update() {
-    circles.forEach((circle, idx) => {
-        if (idx < currentActive) {
-            circle.classList.add('active')
-        } else {
-            circle.classList.remove('active')
-        }
+    $(".submit").click(function() {
+        return false;
     })
-
-    const actives = document.querySelectorAll('.active')
-
-    progress.style.width = (actives.length - 1) / (circles.length - 1) * 100 + '%'
-
-    if (currentActive === 1) {
-        prev.disabled = true
-    } else if (currentActive === circles.length) {
-        next.disabled = true
-    } else {
-        prev.disabled = true
-        next.disabled = true
-    }
-    return 0;
-}
-
-function calDate() {
-
-    Date.prototype.addDays = function(days) {
-        let date = new Date(this.valueOf());
-        date.setDate(date.getDate() + days);
-        return date;
-    }
-    let date = new Date();
-    var nd = date.addDays(5)
-
-    document.getElementById("ED").innerHTML = nd;
-}
+});
